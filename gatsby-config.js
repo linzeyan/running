@@ -14,6 +14,10 @@ module.exports = {
         name: 'Activities',
         url: 'https://linzeyan.github.io/activities',
       },
+      {
+        name: 'Running',
+        url: 'https://linzeyan.github.io/running',
+      },
     ],
   },
   plugins: [
