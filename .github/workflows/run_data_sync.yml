@@ -3,12 +3,12 @@ name: Run Data Sync
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * 1"
   push:
     branches:
       - main
-    # paths:
-    #   - scripts/nike_sync.py
+    paths:
+      - scripts/nike_sync.py
     #   - scripts/nike_to_strava_sync.py
     #   - scripts/strava_sync.py
     #   - scripts/gen_svg.py
