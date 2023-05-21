@@ -24,6 +24,20 @@ module.exports = {
     'gatsby-transformer-json',
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-cloudflare-web-analytics',
+      options: {
+        // You need to provide your site token. You get this from the Cloudflare dashboard
+        token: '27a0cd9f0e3b46909879cf99f7cc6878',
+        // You can add or overwrite attributes of the analytics script tag (optional)
+        // attributes: [
+        //   {
+        //     name: ATTRIBUTE_NAME,
+        //     value: ATTRIBUTE_VALUE,
+        //   }
+        // ],
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: './src/static/',
