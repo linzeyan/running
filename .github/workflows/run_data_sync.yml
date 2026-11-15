@@ -1,28 +1,11 @@
 name: Run Data Sync
 
 on:
+  # Manual only. Nike retired the refresh-token exchange in 2024 (upstream
+  # issue #692), so NIKE_REFRESH_TOKEN can no longer sync unattended; a
+  # scheduled or push-triggered run would just fail every time. To add runs,
+  # put a fresh nike.com access token in the secret and dispatch this.
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * 1'
-  push:
-    branches:
-      - main
-    paths:
-      - run_page/nike_sync.py
-      - run_page/nike_to_strava_sync.py
-      - run_page/strava_sync.py
-      - run_page/gen_svg.py
-      - run_page/garmin_sync.py
-      - run_page/coros_sync.py
-      - run_page/keep_sync.py
-      - run_page/gpx_sync.py
-      - run_page/tcx_sync.py
-      - run_page/tcx_to_garmin_sync.py
-      - run_page/garmin_to_strava_sync.py
-      - run_page/keep_to_strava_sync.py
-      - run_page/oppo_sync.py
-      - run_page/intervals_icu_sync.py
-      - requirements.txt
 
 permissions:
   contents: read
